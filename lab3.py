@@ -1,3 +1,4 @@
+import random
 def cw1a():
     pom = 0
     for i in range(2,101):
@@ -67,11 +68,60 @@ def cw2a():
             i += 1
     return i
 def cw2c():
-    a = int(input("Proszę wpisać pierwszą liczbę: "))
-    b = int(input("Proszę wpisać drugą liczbę: "))
-    c = int(input("Proszę wpisać trzecią liczbę: "))
-    while a < 0 or b < 0 or c < 0:
-        pom = int(input("Proszę zamienić ujemną na dodatnią"))
+    koniec = 0
+    liczby = []
+    while koniec !=3:
+        koniec += 1
+        try:
+            liczba = int(input("Prowaź liczbę "))
+            if liczba < 0 :
+                print("Liczba ujemna proszę spróbować ponownie.")
+                koniec -= 1
+            else:
+                liczby.append(liczba)
+        except ValueError:
+            print("To nie jest liczba całkowita! Spróbuj ponownie")
+            koniec -= 1
+    if 0 in liczby:
+        print("Wprowadzono zero.")
+    else:
+        print("Nie wprowadzono zera")
+    for i in range(len(liczby)):
+        print(liczby[i], end=" ")
+def cw2d():
+    a = random.randint(1,101)
+    print("Gra, zgadnij liczbę zakres od 1 do 100")
+    b = int(input("Podaj liczbę: "))
+    if b==a:
+        print("Brawo zgadłeś!")
+    else:
+        print(f'Niestety nie, zgadywaną liczbą było {a}')
+def cw2e():
+    print("Uwaga! Wartość m musi być większa od 2")
+    m = int(input("Proszę wprowadzić wartość m"))
+    if m <= 2 :
+        print("M musi być większe od 2")
+    else:
+        potega = 0
+        while True:
+            potegowanie = pow(3,potega)
+            print(f'Liczba z potęgowania: {potegowanie}')
+            if potegowanie > m:
+                print(f'{potegowanie} jest większe od {m}')
+                break
+            potega += 1
+def cw2f():
+    print("Program wczytuje liczbę z klawiatury z przedziału 1-12, jak przedział z miesiąca")
+    print("Uwaga dostępne są tylko trzy próby")
+    proba = 0
+    while proba != 3:
+        liczba = int(input("Proszę wprowadzić liczbę: "))
+        if liczba > 12 or liczba < 1:
+            proba += 1
+            print("liczba nie jest w przedziale")
+        else:
+            print(f'{liczba} jest w przedziale 1-12')
+            break
 def main():
     # ćw1a
     # print(cw1a())
@@ -103,4 +153,15 @@ def main():
 
     # ćw2b
 
+    # ćw2c
+    # cw2c()
+
+    # ćw2d
+    # cw2d()
+
+    # ćw2e
+    # cw2e()
+
+    # ćw2f
+    # cw2f()
 main()
