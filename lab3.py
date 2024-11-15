@@ -42,7 +42,7 @@ def cw1f():
     for i in range(1,liczba+1):
         for j in range(1,i+1):
            print(j,end=" ")
-    print()
+        print()
 
 def cw1g():
     n = int(input("Proszę podać liczbę: "))
