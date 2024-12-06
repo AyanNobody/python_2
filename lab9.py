@@ -1,12 +1,13 @@
 import math
-# def czy_posortowane(lista):
-#     pom = 0
-#     naj_wieksza = lista[0]
-#     for i in range(len(lista)):
-#         if lista[0]<lista[i]:
-#             return False
-#         else:
-#             return True
+def czy_posortowane(lista):
+    pom = 0
+    naj_wieksza = lista[0]
+    for i in range(len(lista)):
+        if lista[0]<lista[i]:
+            pom += 1
+        if pom==len(lista)-1:
+            return True
+        else: return False
 
 def func1(lista,n1,n2):
     for i in range(len(lista)):
